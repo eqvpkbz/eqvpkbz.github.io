@@ -20,10 +20,10 @@ function updateTime() {
     clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
     var EndTime = new Date("2022/06/07 09:00:00"); //截止时间
     var t = (EndTime.getTime() - cd.getTime()) / 1000;
-    clock.lst_d = Math.floor(t / 86400);
-    clock.lst_h = Math.floor((t /3600) % 24);
-    clock.lst_m = Math.floor((t / 60) % 60);
-    clock.lst_s = Math.floor(t % 60);
+    clock.lst_d = zeroPadding(Math.floor(t / 86400), 3);
+    clock.lst_h = zeroPadding(Math.floor((t /3600) % 24), 2);
+    clock.lst_m = zeroPadding(Math.floor((t / 60) % 60), 2);
+    clock.lst_s = zeroPadding(Math.floor(t % 60), 2);
 };
 
 function zeroPadding(num, digit) {
