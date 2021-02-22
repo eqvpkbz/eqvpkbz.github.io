@@ -19,40 +19,17 @@
   <body>
     <!-- partial:index.partial.html -->
     <div id="clock">
+      <hr />
       <p class="date">{{ date }}</p>
       <p class="time">{{ time }}</p>
-      <!-- <p class="text">DIGITAL CLOCK with Vue.js</p> -->
+      <hr />
       <h4>目前距离2022年湖南省高考还有</h4>
-      <div id="CountMsg" class="HotDate">
-        <span id="t_d">470 天</span>
-        <span id="t_h">21 时</span>
-        <span id="t_m">3 分</span>
-        <span id="t_s">36 秒</span>
-      </div>
+      <p class="lst_time">{{ lst_d }} 天 {{ lst_h }} 小时 {{ lst_m }} 分钟 {{ lst_s }} 秒</p>
+      <hr />
       <h4>今天已经过去了</h4>
-      <div id="daily">
-        <vue-simple-progress size="medium" :val="pct"></vue-simple-progress>
-        <span id="t_cur">0 %</span>
-      </div>
-      <script type="text/javascript">
-        function getRTime() {
-          var EndTime = new Date("2022/06/07 09:00:00"); //截止时间
-          var NowTime = new Date();
-          var t = EndTime.getTime() - NowTime.getTime();
-          var d = Math.floor(t / 1000 / 60 / 60 / 24);
-          var h = Math.floor((t / 1000 / 60 / 60) % 24);
-          var m = Math.floor((t / 1000 / 60) % 60);
-          var s = Math.floor((t / 1000) % 60);
-          var cur = Math.floor(Math.floor(((NowTime.getTime() / 1000) + 28800) % 86400) / 864);
-          this.pct = cur;
-          document.getElementById("t_d").innerHTML = d + " 天";
-          document.getElementById("t_h").innerHTML = h + " 时";
-          document.getElementById("t_m").innerHTML = m + " 分";
-          document.getElementById("t_s").innerHTML = s + " 秒";
-          document.getElementById("t_cur").innerHTML = cur + "%";
-        }
-        setInterval(getRTime, 1000);
-      </script>
+      <vue-simple-progress size="medium" :val="cur"></vue-simple-progress>
+      <p class="today">{{ cur }} %</p>
+      <hr />
     </div>
     <!-- partial -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>

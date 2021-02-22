@@ -13,6 +13,10 @@ p {
   padding: 0;
 }
 
+hr {
+  border-top: 2px dashed #ffffff;
+}
+
 #clock {
   font-family: 'Share Tech Mono', monospace;
   color: #ffffff;
@@ -33,6 +37,11 @@ p {
 #clock .date {
   letter-spacing: 0.1em;
   font-size: 24px;
+}
+#clock .lst_time {
+  letter-spacing: 0.05em;
+  font-size: 30px;
+  padding: 20px 0;
 }
 #clock .text {
   letter-spacing: 0.1em;

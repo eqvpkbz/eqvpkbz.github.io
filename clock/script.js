@@ -2,7 +2,12 @@ var clock = new Vue({
     el: '#clock',
     data: {
         time: '',
-        date: ''
+        date: '',
+        cur: '',
+        lst_d: '',
+        lst_h: '',
+        lst_m: '',
+        lst_s: ''
     }
 });
 
@@ -13,6 +18,12 @@ function updateTime() {
     var cd = new Date();
     clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
     clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
+    var EndTime = new Date("2022/06/07 09:00:00"); //截止时间
+    var t = (EndTime.getTime() - cd.getTime()) / 1000;
+    clock.lst_d = Math.floor(t / 86400);
+    clock.lst_h = Math.floor((t /3600) % 24);
+    clock.lst_m = Math.floor((t / 60) % 60);
+    clock.lst_s = Math.floor(t % 60);
 };
 
 function zeroPadding(num, digit) {
@@ -21,4 +32,12 @@ function zeroPadding(num, digit) {
         zero += '0';
     }
     return (zero + num).slice(-digit);
-}
+};
+
+var todayleast = setInterval(todaylst, 8640);
+todaylst();
+function todaylst() {
+    var NowTime = new Date();
+    clock.cur = Math.floor(((NowTime.getTime() / 1000) + 28800) % 86400) / 864;
+    clock.cur = clock.cur.toFixed(2); 
+};
