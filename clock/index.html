@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Digital Clock | Eqvpkbz's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'><link rel="stylesheet" href="/404style.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="mask-icon" href="/images/logo.svg" color="#222">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div id="clock">
+      <p class="date">{{ date }}</p>
+      <p class="time">{{ time }}</p>
+      <!-- <p class="text">DIGITAL CLOCK with Vue.js</p> -->
+      <h4>目前距离2022年湖南省高考还有</h4>
+      <div id="CountMsg" class="HotDate">
+        <span id="t_d">470 天</span>
+        <span id="t_h">21 时</span>
+        <span id="t_m">3 分</span>
+        <span id="t_s">36 秒</span>
+      </div>
+      <script type="text/javascript">
+        function getRTime() {
+          var EndTime = new Date("2022/06/07 09:00:00"); //截止时间
+          var NowTime = new Date();
+          var t = EndTime.getTime() - NowTime.getTime();
+          var d = Math.floor(t / 1000 / 60 / 60 / 24);
+          var h = Math.floor((t / 1000 / 60 / 60) % 24);
+          var m = Math.floor((t / 1000 / 60) % 60);
+          var s = Math.floor((t / 1000) % 60);
+  
+          document.getElementById("t_d").innerHTML = d + " 天";
+          document.getElementById("t_h").innerHTML = h + " 时";
+          document.getElementById("t_m").innerHTML = m + " 分";
+          document.getElementById("t_s").innerHTML = s + " 秒";
+        }
+        setInterval(getRTime, 1000);
+      </script>
+    </div>
+    <!-- partial -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
