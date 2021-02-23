@@ -14,12 +14,12 @@ p {
 }
 
 hr {
-  border-top: 2px dashed #ffffff;
+  border-top: 2px dashed #fff;
 }
 
 #clock {
   font-family: 'Share Tech Mono', monospace;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   position: absolute;
   left: 50%;
