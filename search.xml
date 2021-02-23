@@ -302,6 +302,7 @@
     <title>用vue实现 时钟 + 2022 高考倒计时</title>
     <url>/countdown/</url>
     <content><![CDATA[<p>用vue实现 Digital Clock + 2022 高考倒计时， <a href="/clock/index.html">Demo</a></p>
+<p>github仓库在<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2VxdnBrYnovRGlnaXRhbC1DbG9jay1Db3VudGRvd24=">eqvpkbz/Digital-Clock-Countdown<i class="fa fa-external-link-alt"></i></span></p>
 <a id="more"></a>
 <p>进度条采用: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2R6d2lsbGlhL3Z1ZS1zaW1wbGUtcHJvZ3Jlc3M=">vue-simple-progress<i class="fa fa-external-link-alt"></i></span></p>
 <p>Digital Clock 和大体的 CSS  是从 <span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL2dhdS9wZW4vTGpRd0dw">Digital Clock with Vue.js - Toshiyuki TAKAHASH<i class="fa fa-external-link-alt"></i></span> 处剽窃过来的</p>
