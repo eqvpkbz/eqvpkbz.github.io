@@ -41,3 +41,13 @@ function todaylst() {
     clock.cur = Math.floor(((NowTime.getTime() / 1000) + 28800) % 86400) / 864;
     clock.cur = clock.cur.toFixed(2); 
 };
+
+function change(a){
+    var css=document.getElementById("css");
+    if (a == 1) {
+        css.setAttribute("href","night.css");
+    }
+    if (a == 2) {
+        css.setAttribute("href","light.css");
+    }
+}
